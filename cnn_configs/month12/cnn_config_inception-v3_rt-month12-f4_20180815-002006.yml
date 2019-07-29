@@ -1,0 +1,196 @@
+early_stop:
+  _delta: 0.01
+  _enable: false
+  _patience: 7
+fine_tuning:
+  _channel_shift_range_ft: 15.0
+  _cval_ft: 0.0
+  _data_augment_ft: true
+  _featurewise_center_ft: false
+  _featurewise_std_normalization_ft: false
+  _fill_mode_ft: nearest
+  _height_shift_range_ft: 0.5
+  _horizontal_flip_ft: true
+  _num_epochs_ft: 20
+  _num_layers_freeze_ft: 200
+  _optimizer_type_ft: Adam
+  _rescale_ft: 0
+  _rotation_range_ft: 60
+  _samplewise_center_ft: false
+  _samplewise_std_normalization_ft: false
+  _shear_range_ft: 0.2
+  _vertical_flip_ft: true
+  _width_shift_range_ft: 0.5
+  _zca_epsilon_ft: 1e-6
+  _zca_whitening_ft: false
+  _zoom_range_ft: 0.4
+learning:
+  _channel_shift_range_ls: 15.0
+  _cval_ls: 0.0
+  _data_augment_ls: true
+  _featurewise_center_ls: true
+  _featurewise_std_normalization_ls: true
+  _fill_mode_ls: nearest
+  _height_shift_range_ls: 0.5
+  _horizontal_flip_ls: true
+  _num_epochs_ls: 5
+  _optimizer_type_ls: SGD
+  _rescale_ls: 0
+  _rotation_range_ls: 60
+  _samplewise_center_ls: false
+  _samplewise_std_normalization_ls: false
+  _shear_range_ls: 0.2
+  _vertical_flip_ls: true
+  _width_shift_range_ls: 0.5
+  _zca_epsilon_ls: 1e-6
+  _zca_whitening_ls: false
+  _zoom_range_ls: 0.4
+model:
+  _batch_size: 16
+  _class_weight: None
+  _loss: categorical_crossentropy
+  _metric: auc
+  _mode: fine-tuning
+  _model: inception-v3
+  _num_nodes_dense: 1024
+  _wcce_weight: None
+  _weights_start: None
+optimizer_fine_tuning:
+  param_adadelta:
+    _decay: 1e-8
+    _epsilon: 1e-8
+    _learning_rate: 1.0
+    _rho: 0.95
+  param_adagrad:
+    _decay: 0.0
+    _epsilon: 1e-8
+    _learning_rate: 1e-2
+  param_adam:
+    _beta_1: 0.9
+    _beta_2: 0.999
+    _decay: 0.0
+    _epsilon: 1e-8
+    _learning_rate: '0.0005'
+  param_adamax:
+    _beta_1: 0.9
+    _beta_2: 0.999
+    _decay: 0.0
+    _epsilon: 1e-8
+    _learning_rate: 0.01
+  param_nadam:
+    _beta_1: 0.9
+    _beta_2: 0.999
+    _epsilon: 1.0e-08
+    _learning_rate: 0.002
+    _schedule_decay: 4e-3
+  param_rmsprop:
+    _decay: 0.0
+    _epsilon: 1e-8
+    _learning_rate: 1e-3
+    _rho: 0.9
+  param_sgd:
+    _decay: 0.2
+    _learning_rate: 3e-4
+    _momentum: 0.9
+    _nesterov: true
+optimizer_learning:
+  param_adadelta:
+    _decay: 1.0e-08
+    _epsilon: 1.0e-08
+    _learning_rate: 1.0
+    _rho: 0.95
+  param_adagrad:
+    _decay: 0.0
+    _epsilon: 1.0e-08
+    _learning_rate: 0.01
+  param_adam:
+    _beta_1: 0.9
+    _beta_2: 0.999
+    _decay: 0.0
+    _epsilon: 1.0e-08
+    _learning_rate: 0.001
+  param_adamax:
+    _beta_1: 0.9
+    _beta_2: 0.999
+    _decay: 0.0
+    _epsilon: 1.0e-08
+    _learning_rate: 0.01
+  param_nadam:
+    _beta_1: 0.9
+    _beta_2: 0.999
+    _epsilon: 1.0e-08
+    _learning_rate: 0.002
+    _schedule_decay: 4e-3
+  param_rmsprop:
+    _decay: 0.0
+    _epsilon: 1.0e-08
+    _learning_rate: 0.001
+    _rho: 0.9
+  param_sgd:
+    _decay: 0.0
+    _learning_rate: 0.001
+    _momentum: 0.9
+    _nesterov: true
+optimizer_transfer_learning:
+  param_adadelta:
+    _decay: 1.0e-08
+    _epsilon: 1.0e-08
+    _learning_rate: 1.0
+    _rho: 0.95
+  param_adagrad:
+    _decay: 0.0
+    _epsilon: 1.0e-08
+    _learning_rate: 0.01
+  param_adam:
+    _beta_1: 0.9
+    _beta_2: 0.999
+    _decay: 0.0
+    _epsilon: 1.0e-08
+    _learning_rate: '0.005'
+  param_adamax:
+    _beta_1: 0.9
+    _beta_2: 0.999
+    _decay: 0.0
+    _epsilon: 1.0e-08
+    _learning_rate: 0.01
+  param_nadam:
+    _beta_1: 0.9
+    _beta_2: 0.999
+    _epsilon: 1.0e-08
+    _learning_rate: 0.002
+    _schedule_decay: 4e-3
+  param_rmsprop:
+    _decay: 0.0
+    _epsilon: 1.0e-08
+    _learning_rate: 0.0001
+    _rho: 0.9
+  param_sgd:
+    _decay: 0.0
+    _learning_rate: 0.0001
+    _momentum: 0.9
+    _nesterov: true
+reduce_lr:
+  _enable: false
+  _factor: 0.2
+  _patience: 3
+transfer_learning:
+  _channel_shift_range_tl: 15.0
+  _cval_tl: 0.0
+  _data_augment_tl: true
+  _featurewise_center_tl: false
+  _featurewise_std_normalization_tl: false
+  _fill_mode_tl: nearest
+  _height_shift_range_tl: 0.5
+  _horizontal_flip_tl: true
+  _num_epochs_tl: 10
+  _optimizer_type_tl: Adam
+  _rescale_tl: 0
+  _rotation_range_tl: 60
+  _samplewise_center_tl: false
+  _samplewise_std_normalization_tl: false
+  _shear_range_tl: 0.2
+  _vertical_flip_tl: true
+  _width_shift_range_tl: 0.5
+  _zca_epsilon_tl: 1e-6
+  _zca_whitening_tl: false
+  _zoom_range_tl: 0.4
